@@ -1,0 +1,25 @@
+{
+    "name": "niklasdahlqvist/wordpress-git-installer",
+    "description": "WordPress Git installer.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Niklas Dahlqvist",
+            "email": "dalkmania@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/console": "^4.2",
+        "symfony/filesystem": "^4.2",
+        "symfony/finder": "^4.2",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+          "WordPressGitInstaller\\Console\\": "src"
+        }
+    },
+    "bin": [
+        "wp-git-installer"
+    ]
+}
