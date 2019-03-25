@@ -184,7 +184,7 @@ class NewCommand extends Command
     /**
      * Get the latest WordPress version tag name.
      *
-     * @return void
+     * @return string
      */
     protected function getWordPressVersion()
     {
