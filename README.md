@@ -14,6 +14,6 @@ Make sure to place composer's system-wide vendor bin directory in your `$PATH` s
 
 
 
-Once installed, the `wordpress-git-installer new` command will create a fresh WordPress installation in the directory you specify. For instance, `wordpress-git-installer new blog` will create a directory named `blog` containing a fresh WordPress installation:
+Once installed, the `wp-git-installer new` command will create a fresh WordPress installation in the directory you specify. For instance, `wp-git-installer new blog` will create a directory named `blog` containing a fresh WordPress installation:
 
-    wordpress-git-installer new blog
+    wp-git-installer new blog
