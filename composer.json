@@ -9,10 +9,11 @@
         }
     ],
     "require": {
-        "symfony/console": "^4.2",
-        "symfony/filesystem": "^4.2",
-        "symfony/finder": "^4.2",
-        "guzzlehttp/guzzle": "^6.3"
+        "symfony/console": "^5.2",
+        "symfony/filesystem": "^5.2",
+        "symfony/finder": "^5.2",
+        "guzzlehttp/guzzle": "^7.3",
+        "symfony/process": "^5.2"
     },
     "autoload": {
         "psr-4": {

@@ -62,7 +62,7 @@ class NewCommand extends Command
 
         $output->writeln('<info>Initializing an Empty Repository & Downloading WordPress from Git ...</info>');
 
-        $process = new Process(implode(' && ', $commands), $directory, null, null, null);
+        $process = Process::fromShellCommandline(implode(' && ', $commands), $directory, null, null, null);
         if ('\\' !== DIRECTORY_SEPARATOR && file_exists('/dev/tty') && is_readable('/dev/tty')) {
             $process->setTty(true);
         }
@@ -80,6 +80,8 @@ class NewCommand extends Command
         $output->writeln('<info>Repository Cleanup Completed</info>');
 
         $output->writeln('<comment>WordPress Site Setup ready! Build something amazing.</comment>');
+
+        return $process->getExitCode();
     }
 
     /**
@@ -188,7 +190,8 @@ class NewCommand extends Command
      */
     protected function getWordPressVersion()
     {
-        $response = (new Client)->get('https://api.github.com/repos/WordPress/WordPress/tags');
+        $client = new Client([ 'verify' => false]);
+        $response = $client->get('//api.github.com/repos/WordPress/WordPress/tags');
         $versions = json_decode($response->getBody(), true);
         return $versions[0]['name'];
     }
