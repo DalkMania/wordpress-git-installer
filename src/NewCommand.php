@@ -164,7 +164,7 @@ class NewCommand extends Command
         $contants .= 'define(\'WP_HOME\', \'https://\' . $_SERVER[\'SERVER_NAME\']);' . PHP_EOL;
         $contants .= 'define(\'WP_CONTENT_DIR\', $_SERVER[\'DOCUMENT_ROOT\'] . \'/wp-content\');' . PHP_EOL;
         $contants .= 'define(\'WP_CONTENT_URL\', \'https://\' . $_SERVER[\'SERVER_NAME\'] . \'/wp-content\');' . PHP_EOL . PHP_EOL;
-        $contants .= '// ** MySQL settings - You can get this info from your web host ** //';
+        $contants .= '// ** Database settings - You can get this info from your web host ** //';
 
         $finder->files()->in($directory)->name('*.php')->depth('== 0');
 
@@ -174,7 +174,7 @@ class NewCommand extends Command
                 '/wp-blog-header.php',
                 '/' . $wpdirectory . '/wp-blog-header.php',
                 str_replace(
-                    '// ** MySQL settings - You can get this info from your web host ** //',
+                    '// ** Database settings - You can get this info from your web host ** //',
                     $contants,
                     $contents
                 )
