@@ -1,7 +1,6 @@
 {
     "name": "niklasdahlqvist/wordpress-git-installer",
     "description": "WordPress Git installer.",
-    "version": "1.0.3",
     "license": "MIT",
     "authors": [
         {
