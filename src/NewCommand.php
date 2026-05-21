@@ -35,9 +35,9 @@ class NewCommand extends Command
      *
      * @param  \Symfony\Component\Console\Input\InputInterface  $input
      * @param  \Symfony\Component\Console\Output\OutputInterface  $output
-     * @return void
+     * @return int
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $fileSystem = new Filesystem();
         $directory = ($input->getArgument('name')) ? getcwd() . '/' . $input->getArgument('name') : getcwd();
@@ -81,7 +81,8 @@ class NewCommand extends Command
 
         $output->writeln('<comment>WordPress Site Setup ready! Build something amazing.</comment>');
 
-        return $process->getExitCode();
+        $process->getExitCode();
+        return Command::SUCCESS; // Equivalent to 0
     }
 
     /**
@@ -139,6 +140,12 @@ class NewCommand extends Command
         $fileSystem->remove($directory . '/wp-content/themes/twentyfifteen');
         $fileSystem->remove($directory . '/wp-content/themes/twentysixteen');
         $fileSystem->remove($directory . '/wp-content/themes/twentyseventeen');
+        $fileSystem->remove($directory . '/wp-content/themes/twentynineteen');
+        $fileSystem->remove($directory . '/wp-content/themes/twentytwenty');
+        $fileSystem->remove($directory . '/wp-content/themes/twentytwentyone');
+        $fileSystem->remove($directory . '/wp-content/themes/twentytwentytwo');
+        $fileSystem->remove($directory . '/wp-content/themes/twentytwentythree');
+        $fileSystem->remove($directory . '/wp-content/themes/twentytwentyfour');
 
         $output->writeln('<info>Removed WordPress Plugins and Theme Files</info>');
 
@@ -190,7 +197,7 @@ class NewCommand extends Command
      */
     protected function getWordPressVersion()
     {
-        $client = new Client([ 'verify' => false]);
+        $client = new Client(['verify' => false]);
         $response = $client->get('//api.github.com/repos/WordPress/WordPress/tags');
         $versions = json_decode($response->getBody(), true);
         return $versions[0]['name'];
