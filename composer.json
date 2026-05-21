@@ -1,26 +1,26 @@
 {
-    "name": "niklasdahlqvist/wordpress-git-installer",
-    "description": "WordPress Git installer.",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Niklas Dahlqvist",
-            "email": "dalkmania@gmail.com"
-        }
-    ],
-    "require": {
-        "symfony/console": "^6.1.4",
-        "symfony/filesystem": "^6.1.5",
-        "symfony/finder": "^6.1.3",
-        "guzzlehttp/guzzle": "^7.3",
-        "symfony/process": "^6.1.3"
-    },
-    "autoload": {
-        "psr-4": {
-          "WordPressGitInstaller\\Console\\": "src"
-        }
-    },
-    "bin": [
-        "wp-git-installer"
-    ]
+  "name": "niklasdahlqvist/wordpress-git-installer",
+  "description": "WordPress Git installer.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Niklas Dahlqvist",
+      "email": "dalkmania@gmail.com"
+    }
+  ],
+  "require": {
+    "symfony/console": "^6.0|^7.0",
+    "symfony/process": "^6.0|^7.0",
+    "guzzlehttp/guzzle": "^6.0|^7.4",
+    "symfony/filesystem": "^6.0|^7.0",
+    "symfony/finder": "^6.0|^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "WordPressGitInstaller\\Console\\": "src"
+    }
+  },
+  "bin": [
+    "wp-git-installer"
+  ]
 }
